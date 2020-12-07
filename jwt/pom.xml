@@ -8,13 +8,17 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>shiro</artifactId>
+    <artifactId>jwt</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>com.zqh</groupId>
-            <artifactId>commons</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>java-jwt</artifactId>
+            <version>3.5.0</version>
         </dependency>
     </dependencies>
 </project>
