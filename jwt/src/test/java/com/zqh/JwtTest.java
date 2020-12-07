@@ -5,9 +5,7 @@ import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import org.junit.Test;
-import org.junit.platform.commons.util.StringUtils;
 
-import java.sql.SQLOutput;
 import java.util.Calendar;
 import java.util.HashMap;
 
