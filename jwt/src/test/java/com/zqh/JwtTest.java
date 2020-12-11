@@ -1,13 +1,20 @@
 package com.zqh;
 
 import com.auth0.jwt.JWT;
+import com.auth0.jwt.JWTCreator;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
+import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import com.sun.org.apache.regexp.internal.RE;
 import org.junit.Test;
+import org.springframework.boot.autoconfigure.security.oauth2.resource.OAuth2ResourceServerProperties;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequestWrapper;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author zhuangqinghui
@@ -21,10 +28,11 @@ public class JwtTest {
         HashMap<String, Object> map = new HashMap<>();
         Calendar instance = Calendar.getInstance();
         instance.add(Calendar.SECOND, 2);
+        int date = Calendar.DATE;
         String token = JWT.create()
                 .withHeader(map)    //head, 可以省略不写
                 .withClaim("userId", 21)    //payload
-                .withClaim("username", "zhangsan")
+                .withClaim("username", "zhangSan")
                 .withExpiresAt(instance.getTime())                    //指定令牌过期时间
                 .sign(Algorithm.HMAC256("QHI"));            //签名, 里面指定秘钥
         System.out.println(token);
@@ -34,9 +42,9 @@ public class JwtTest {
     public void test() {
         //创建验证对象, 有这个验证对象之后可以验证token
         JWTVerifier jwtVerifier = JWT.require(Algorithm.HMAC256("QHI")).build();
-
         DecodedJWT verify = jwtVerifier.verify("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDcyNTM5ODMsInVzZXJJZCI6MjEsInVzZXJuYW1lIjoiemhhbmdzYW4ifQ.5B7pavVJf78T4nTnMLb2DngENJIinaRCYixC0S2doxM");
-        //System.out.println(verify.getClaim("userId").asInt());
-        //System.out.println(verify.getClaim("username").asString());
+        System.out.println(verify.getClaim("userId").asInt());
+        System.out.println(verify.getClaim("username").asString());
+        Map<String, Claim> claims = verify.getClaims();
     }
 }
