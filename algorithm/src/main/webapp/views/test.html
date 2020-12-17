@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class='inline-wrap'>
+    <!--<div class='block-wrap'>
+        <div class='block'>
+            哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+            哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+            哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+            &lt;!&ndash;<div style="width: 20px;height: 20px;background-color: red;position: absolute"></div>&ndash;&gt;
+            <span class='icon'>12</span>
+        </div>
+    </div>-->
+    <p>first line of test text which is long enough to stretch onto a second line .first line of test text which is long enough to stretch onto a second line .first line of test text which is long enough to stretch onto a second line .first line of test text which is long enough to stretch onto a second line .</p>
+</div>
+
+<!--<p>first line of test text which is long enough to stretch onto a second line .</p>-->
+
+</body>
+<style>
+    .inline-wrap {
+        display: inline-block;
+        max-width: 300px;
+    }
+
+    .block-wrap {
+        width: 100%;
+    }
+
+    .block {
+        /*position: relative;*/
+        display: block;
+        height: 60px;
+        display: table-row-group; /*值必须为-webkit-box或者-webkit-inline-box*/
+        -webkit-box-orient: vertical; /*值必须为vertical*/
+        -webkit-line-clamp: 3; /*值为数字，表示一共显示几行*/
+        overflow: hidden;
+        /*white-space: nowrap;*/
+        /*text-overflow: ellipsis;*/
+        /*padding-right: 20px;*/
+    }
+
+    .icon {
+        /*position: absolute;*/
+        width: 50px;
+        height: 20px;
+        /*right: 0;*/
+        /*bottom: 0;*/
+        color: #f00;
+        background: #000;
+    }
+
+    p {
+        position: relative;
+        display: inline;
+    }
+
+    p:after {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        border-bottom: 1px solid #000;
+        content: ""
+    }
+</style>
+</html>
