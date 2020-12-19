@@ -15,9 +15,10 @@ public class MyTest {
         String replace = s.replaceAll("java", "zqh");
         System.out.println(replace);
     }
+
     @Test
     public void StringTest2() {
-        String s= ",1111,";
+        String s = ",1111,";
         String[] split = s.split(",");
         System.out.println(split.length);
     }
