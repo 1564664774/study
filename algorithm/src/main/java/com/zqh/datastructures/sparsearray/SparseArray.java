@@ -3,10 +3,7 @@ package com.zqh.datastructures.sparsearray;
 import com.zqh.datastructures.sparsearray.pojo.Item;
 import com.zqh.datastructures.sparsearray.pojo.Random;
 
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author zhuangqinghui
@@ -15,9 +12,13 @@ import java.util.Set;
  */
 public class SparseArray {
 
+
+    private static final int row = 100;
+    private static final int count = 7;
+
     public static void main(String[] args) {
 
-        int[][] arr = new int[10000][10000];
+        int[][] arr = new int[row][row];
 
         random(arr);
         long l = System.currentTimeMillis();
@@ -92,9 +93,9 @@ public class SparseArray {
     public static void random(int[][] arr) {
         java.util.Random random = new java.util.Random();
         Set<Random> set = new HashSet<>();
-        while (set.size() <= 1000) {
-            int i1 = random.nextInt(10000);
-            int i2 = random.nextInt(10000);
+        while (set.size() < count) {
+            int i1 = random.nextInt(row);
+            int i2 = random.nextInt(row);
             set.add(new Random(i1, i2));
             arr[i1][i2] = 1;
         }
