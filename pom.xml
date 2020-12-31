@@ -8,6 +8,7 @@
         <module>shiro</module>
         <module>jwt</module>
         <module>algorithm</module>
+        <module>sharding</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
