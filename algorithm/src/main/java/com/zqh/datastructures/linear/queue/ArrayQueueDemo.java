@@ -107,6 +107,11 @@ class ArrayQueue {
 
 }
 
+/**
+ * 循环队列重要的是留一个位置作为约定空间, 这样才能判断空还是满
+ * @author zhuangqinghui
+ * @date 2021/1/11
+ */
 class ArrayQueueAround {
 
     private final int maxSize; //长度
