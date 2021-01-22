@@ -51,7 +51,7 @@ public class MyTest {
      */
     @Test
     public void maximumProduct() {
-        int[] nums = new int[]{1, 2, 4, 4, 5, -1, 2, 6, 7};
+        int[] nums = new int[]{-8,-7,-2,10,20};
         //
         //保存负数数组
         int[] negativeNumber = new int[]{0, 0};
@@ -69,7 +69,7 @@ public class MyTest {
                     continue;
                 }
                 for (int i = negativeNumber.length - 2; i >= 0; i--) {
-                    if (num < nums[i]) {
+                    if (num < negativeNumber[i]) {
                         negativeNumber[i+1] = negativeNumber[i];
                         if (i == 0) {
                             negativeNumber[i] = num;
@@ -84,7 +84,7 @@ public class MyTest {
                     continue;
                 }
                 for (int i = positiveNumber.length - 2; i >= 0; i--) {
-                    if (num > nums[i]) {
+                    if (num > positiveNumber[i]) {
                         positiveNumber[i+1] = positiveNumber[i];
                         if (i == 0) {
                             positiveNumber[i] = num;
@@ -96,12 +96,16 @@ public class MyTest {
             }
         }
 
-        if (negativeNumber[0] * negativeNumber[1] != 0) {
-            if (negativeNumber[0] * negativeNumber[1] > positiveNumber[0] * positiveNumber[1]) {
+        if (positiveNumber[0] * positiveNumber[1] * positiveNumber[2] < 0) {
+            System.out.println(positiveNumber[0] * positiveNumber[1] * positiveNumber[0]);
+        } else if (negativeNumber[0] * negativeNumber[1] != 0) {
+            if (negativeNumber[0 ] * negativeNumber[1] > positiveNumber[0] * positiveNumber[1]) {
                 System.out.println(negativeNumber[0] * negativeNumber[1] * positiveNumber[0]);
             } else {
                 System.out.println(positiveNumber[0] * positiveNumber[1] * positiveNumber[2]);
             }
+        } else {
+            System.out.println(positiveNumber[0] * positiveNumber[1] * positiveNumber[2]);
         }
 
     }
