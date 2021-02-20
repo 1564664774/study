@@ -2,6 +2,7 @@ package com.zqh.datastructures.linear.queue;
 
 /**
  * 使用数组模拟队列
+ *
  * @author zhuangqinghui
  * @version 1.0
  * @date 2020/12/24 16:45
@@ -29,7 +30,6 @@ public class ArrayQueueDemo {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }*/
-
 
 
         ArrayQueueAround arrayQueueAround = new ArrayQueueAround(3);
@@ -77,7 +77,7 @@ class ArrayQueue {
 
     //队列是否满了
     public boolean isFull() {
-        return rear == maxSize -1;
+        return rear == maxSize - 1;
     }
 
     //插入数据
@@ -99,7 +99,7 @@ class ArrayQueue {
 
     //显示所有数据
     public void showQueue() {
-        for (int i = front+1; i <= rear; i++) {
+        for (int i = front + 1; i <= rear; i++) {
             System.out.printf("%d\t", arr[i]);
         }
         System.out.println();
@@ -109,6 +109,7 @@ class ArrayQueue {
 
 /**
  * 循环队列重要的是留一个位置作为约定空间, 这样才能判断空还是满
+ *
  * @author zhuangqinghui
  * @date 2021/1/11
  */
@@ -133,7 +134,7 @@ class ArrayQueueAround {
 
     //队列是否满了
     public boolean isFull() {
-        return (rear + 1)%maxSize == front;
+        return (rear + 1) % maxSize == front;
     }
 
     //插入数据
@@ -143,7 +144,7 @@ class ArrayQueueAround {
             return;
         }
         arr[rear] = item;
-        rear = ++rear%maxSize;
+        rear = ++rear % maxSize;
     }
 
     //取出数据
@@ -152,13 +153,13 @@ class ArrayQueueAround {
             throw new RuntimeException("队列中没有数据");
         }
         int temp = arr[front];
-        front = (front+1)%maxSize;
+        front = (front + 1) % maxSize;
         return temp;
     }
 
     //显示所有数据
     public void showQueue() {
-        for (int i = front; i != rear; i = (i+1)%maxSize) {
+        for (int i = front; i != rear; i = (i + 1) % maxSize) {
             System.out.printf("%d\t", arr[i]);
         }
         System.out.println();

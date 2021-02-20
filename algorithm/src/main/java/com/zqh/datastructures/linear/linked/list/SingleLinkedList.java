@@ -1,7 +1,6 @@
 package com.zqh.datastructures.linear.linked.list;
 
-import jdk.nashorn.internal.objects.annotations.Where;
-import lombok.*;
+import lombok.Data;
 
 import java.util.Stack;
 
@@ -93,8 +92,6 @@ public class SingleLinkedList {
     }
 
 
-
-
     public static void main(String[] args) {
         text5();
         Stack<String> stack = new Stack<>();
@@ -103,7 +100,7 @@ public class SingleLinkedList {
     public static void text1() {
         SingleLinkedList list = new SingleLinkedList();
         Node node1 = new Node(1, "宋江", "及时雨");
-        Node node2 = new Node(2, "卢俊义","玉麒麟");
+        Node node2 = new Node(2, "卢俊义", "玉麒麟");
         Node node3 = new Node(3, "吴用", "智多星");
         Node node4 = new Node(4, "林冲", "豹子头");
         list.add(node1);
@@ -112,10 +109,11 @@ public class SingleLinkedList {
         list.add(node4);
         list.print();
     }
+
     public static void text2() {
         SingleLinkedList list = new SingleLinkedList();
         Node node1 = new Node(1, "宋江", "及时雨");
-        Node node2 = new Node(2, "卢俊义","玉麒麟");
+        Node node2 = new Node(2, "卢俊义", "玉麒麟");
         Node node3 = new Node(3, "吴用", "智多星");
         Node node4 = new Node(4, "林冲", "豹子头");
         list.addByOrder(node1);
@@ -124,10 +122,11 @@ public class SingleLinkedList {
         list.addByOrder(node4);
         list.print();
     }
+
     public static void text3() {
         SingleLinkedList list = new SingleLinkedList();
         Node node1 = new Node(1, "宋江", "及时雨");
-        Node node2 = new Node(2, "卢俊义","玉麒麟");
+        Node node2 = new Node(2, "卢俊义", "玉麒麟");
         Node node3 = new Node(3, "吴用", "智多星");
         Node node4 = new Node(4, "林冲", "豹子头");
         list.addByOrder(node1);
@@ -143,7 +142,7 @@ public class SingleLinkedList {
     public static void text4() {
         SingleLinkedList list = new SingleLinkedList();
         Node node1 = new Node(1, "宋江", "及时雨");
-        Node node2 = new Node(2, "卢俊义","玉麒麟");
+        Node node2 = new Node(2, "卢俊义", "玉麒麟");
         Node node3 = new Node(3, "吴用", "智多星");
         Node node4 = new Node(4, "林冲", "豹子头");
         list.addByOrder(node1);
@@ -155,10 +154,11 @@ public class SingleLinkedList {
         System.out.println("修改后的情况~~~~~~~~");
         list.print();
     }
+
     public static void text5() {
         SingleLinkedList list = new SingleLinkedList();
         Node node1 = new Node(1, "宋江", "及时雨");
-        Node node2 = new Node(2, "卢俊义","玉麒麟");
+        Node node2 = new Node(2, "卢俊义", "玉麒麟");
         Node node3 = new Node(3, "吴用", "智多星");
         Node node4 = new Node(4, "林冲", "豹子头");
         list.addByOrder(node1);

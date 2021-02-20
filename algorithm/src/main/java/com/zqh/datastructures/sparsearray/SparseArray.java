@@ -3,7 +3,10 @@ package com.zqh.datastructures.sparsearray;
 import com.zqh.datastructures.sparsearray.pojo.Item;
 import com.zqh.datastructures.sparsearray.pojo.Random;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 
 /**
  * @author zhuangqinghui
@@ -53,7 +56,6 @@ public class SparseArray {
     }
 
 
-
     public static int[][] toSparseArr(int[][] arr) {
         int sum = 0;
         for (int[] ints : arr) {
@@ -63,7 +65,7 @@ public class SparseArray {
                 }
             }
         }
-        int[][] sparseArr = new int[sum+1][3];
+        int[][] sparseArr = new int[sum + 1][3];
         sparseArr[0][0] = arr.length;
         sparseArr[0][1] = arr[0].length;
         sparseArr[0][2] = sum;

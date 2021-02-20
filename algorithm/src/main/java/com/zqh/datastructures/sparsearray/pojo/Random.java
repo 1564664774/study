@@ -27,7 +27,7 @@ public class Random {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Random random = (Random) o;
-        return (random.getRow()+"-"+ random.getCol()).equals(row+"-"+col);
+        return (random.getRow() + "-" + random.getCol()).equals(row + "-" + col);
     }
 
     @Override

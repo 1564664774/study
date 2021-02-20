@@ -1,7 +1,5 @@
 package com.zqh.datastructures.linear.linked.list;
 
-import java.util.Stack;
-
 /**
  * @author zhuangqinghui
  * @version 1.0
@@ -67,7 +65,6 @@ public class TwoWayLinkedList {
     }
 
 
-
     //遍历链表
     public void print() {
         if (head.getNext() == null) {
@@ -82,15 +79,13 @@ public class TwoWayLinkedList {
     }
 
 
-
-
     public static void main(String[] args) {
     }
 
     public static void text1() {
         TwoWayLinkedList list = new TwoWayLinkedList();
         TwoWayNode node1 = new TwoWayNode(1, "宋江", "及时雨");
-        TwoWayNode node2 = new TwoWayNode(2, "卢俊义","玉麒麟");
+        TwoWayNode node2 = new TwoWayNode(2, "卢俊义", "玉麒麟");
         TwoWayNode node3 = new TwoWayNode(3, "吴用", "智多星");
         TwoWayNode node4 = new TwoWayNode(4, "林冲", "豹子头");
         list.add(node1);
@@ -99,10 +94,11 @@ public class TwoWayLinkedList {
         list.add(node4);
         list.print();
     }
+
     public static void text2() {
         TwoWayLinkedList list = new TwoWayLinkedList();
         TwoWayNode node1 = new TwoWayNode(1, "宋江", "及时雨");
-        TwoWayNode node2 = new TwoWayNode(2, "卢俊义","玉麒麟");
+        TwoWayNode node2 = new TwoWayNode(2, "卢俊义", "玉麒麟");
         TwoWayNode node3 = new TwoWayNode(3, "吴用", "智多星");
         TwoWayNode node4 = new TwoWayNode(4, "林冲", "豹子头");
         list.addByOrder(node1);
@@ -111,10 +107,11 @@ public class TwoWayLinkedList {
         list.addByOrder(node4);
         list.print();
     }
+
     public static void text3() {
         TwoWayLinkedList list = new TwoWayLinkedList();
         TwoWayNode node1 = new TwoWayNode(1, "宋江", "及时雨");
-        TwoWayNode node2 = new TwoWayNode(2, "卢俊义","玉麒麟");
+        TwoWayNode node2 = new TwoWayNode(2, "卢俊义", "玉麒麟");
         TwoWayNode node3 = new TwoWayNode(3, "吴用", "智多星");
         TwoWayNode node4 = new TwoWayNode(4, "林冲", "豹子头");
         list.addByOrder(node1);
@@ -130,7 +127,7 @@ public class TwoWayLinkedList {
     public static void text4() {
         TwoWayLinkedList list = new TwoWayLinkedList();
         TwoWayNode node1 = new TwoWayNode(1, "宋江", "及时雨");
-        TwoWayNode node2 = new TwoWayNode(2, "卢俊义","玉麒麟");
+        TwoWayNode node2 = new TwoWayNode(2, "卢俊义", "玉麒麟");
         TwoWayNode node3 = new TwoWayNode(3, "吴用", "智多星");
         TwoWayNode node4 = new TwoWayNode(4, "林冲", "豹子头");
         list.addByOrder(node1);

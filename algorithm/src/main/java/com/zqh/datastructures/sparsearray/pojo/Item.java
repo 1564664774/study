@@ -32,25 +32,26 @@ public class Item {
         System.out.println(getValue(s, "disco"));
         System.out.println(getValue(s, "d"));
     }
+
     public static String getValue(String str, String name) {
         int i = -1;
         Character flag = ' ';
         name = name + "=";
         while (!flag.equals('{') && !flag.equals('&')) {
-            i = str.indexOf(name, i+1);
+            i = str.indexOf(name, i + 1);
             if (i == -1) {
                 break;
             }
-            flag = str.charAt(i-1);
+            flag = str.charAt(i - 1);
         }
         if (i == -1) {
             return "";
         }
         int j = str.indexOf("&", i);
         if (j == -1) {
-            return str.substring(i+name.length(), str.length()-1);
+            return str.substring(i + name.length(), str.length() - 1);
         } else {
-            return str.substring(i+name.length(), j);
+            return str.substring(i + name.length(), j);
         }
     }
 }
