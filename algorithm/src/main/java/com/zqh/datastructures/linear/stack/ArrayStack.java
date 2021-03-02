@@ -67,7 +67,7 @@ public class ArrayStack {
 
     public static void main(String[] args) {
         ArrayStack stack = new ArrayStack(4);
-        String key = "";
+        String key;
         boolean loop = true;
         Scanner input = new Scanner(System.in);
         while (loop) {

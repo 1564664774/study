@@ -8,9 +8,4 @@ package com.zqh.datastructures.linear.linked.list;
  */
 public class LinkList {
 
-    public static void main(String[] args) {
-        Node node = new Node();
-    }
-
-
 }
