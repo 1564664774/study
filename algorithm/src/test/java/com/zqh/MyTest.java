@@ -1,5 +1,6 @@
 package com.zqh;
 
+import com.alibaba.fastjson.JSONObject;
 import com.zqh.datastructures.sparsearray.pojo.Random;
 import org.junit.Test;
 
@@ -34,6 +35,18 @@ public class MyTest {
         cal.add(Calendar.DATE, -1);
         System.out.println(format.format(cal.getTime()));
 
+    }
+
+    @Test
+    public void ListTest() {
+        List<Integer> list = new ArrayList<>();
+        list.add(0);
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.subList(1, 3).clear();
+        System.out.println(JSONObject.toJSONString(list));
     }
 
     @Test
