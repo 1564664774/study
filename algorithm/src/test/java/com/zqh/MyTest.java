@@ -2,6 +2,8 @@ package com.zqh;
 
 import com.alibaba.fastjson.JSONObject;
 import com.zqh.datastructures.sparsearray.pojo.Random;
+import lombok.Data;
+import org.apache.catalina.User;
 import org.junit.Test;
 
 import java.text.ParseException;
@@ -39,14 +41,28 @@ public class MyTest {
 
     @Test
     public void ListTest() {
-        List<Integer> list = new ArrayList<>();
-        list.add(0);
-        list.add(1);
-        list.add(2);
-        list.add(3);
-        list.add(4);
-        list.subList(1, 3).clear();
+        List<User> list = new ArrayList<>();
+        list.add(new User(0));
+        list.add(new User(1));
+        list.add(new User(2));
+        list.add(new User(3));
+        list.add(new User(4));
+        toList(list);
+        //list.subList(1, 3).clear();
         System.out.println(JSONObject.toJSONString(list));
+    }
+
+    @Data
+    class User {
+        int age;
+        User(int age) {
+            this.age = age;
+        }
+    }
+
+    public void toList(List<User> list) {
+        User user = list.get(1);
+        user.setAge(10);
     }
 
     @Test
