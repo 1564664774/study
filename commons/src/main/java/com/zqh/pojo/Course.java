@@ -14,13 +14,4 @@ public class Course {
     private Long userId;
     private String cstatus;
 
-    @Override
-    public String toString() {
-        return "Course{" +
-                "cid=" + cid +
-                ", cname='" + cname + '\'' +
-                ", userId=" + userId +
-                ", cstatus='" + cstatus + '\'' +
-                '}';
-    }
 }
