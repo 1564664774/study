@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -56,8 +57,8 @@ public class MyTest {
         list.add(new User(2));
         list.add(new User(3));
         list.add(new User(4));
-        toList(list);
-        //list.subList(1, 3).clear();
+        //toList(list);
+        list.subList(1, 5).clear();
         System.out.println(JSONObject.toJSONString(list));
     }
 
@@ -72,8 +73,13 @@ public class MyTest {
     @Test
     public void LocalDateTest() {
         LocalDate now = LocalDate.now();
-        LocalDate localDate = now.plusDays(11);
-        System.out.println(localDate);
+        //LocalDate localDate = now.plusDays(11);
+        int value = now.getDayOfWeek().getValue();
+
+        LocalDate startDate = now.plusDays(-1 * (value - 1));
+        LocalDate endDate = now.plusDays(7 - value);
+
+        System.out.println(startDate + "-" + endDate);
     }
 
     @Data
