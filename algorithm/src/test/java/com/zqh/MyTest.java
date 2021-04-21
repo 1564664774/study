@@ -71,6 +71,19 @@ public class MyTest {
     }
 
     @Test
+    public void streamTest() {
+        List<Double> list = new ArrayList<>();
+        list.add(null);
+        list.add(1.0);
+        list.add(2.0);
+        list.add(3.0);
+        list.add(4.0);
+        double average = list.stream().filter(Objects::nonNull).mapToDouble(Double::doubleValue).summaryStatistics().getAverage();
+        System.out.println(average);
+    }
+
+
+    @Test
     public void LocalDateTest() {
         LocalDate now = LocalDate.now();
         //LocalDate localDate = now.plusDays(11);
