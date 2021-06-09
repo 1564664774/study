@@ -57,6 +57,8 @@ public class MyTest {
         list.add(new User(2));
         list.add(new User(3));
         list.add(new User(4));
+        System.out.println(JSONObject.toJSONString(list.subList(1, 2)));
+        System.out.println(JSONObject.toJSONString(list.subList(2, list.size())));
         //toList(list);
         list.subList(1, 5).clear();
         System.out.println(JSONObject.toJSONString(list));
@@ -72,17 +74,32 @@ public class MyTest {
 
     @Test
     public void streamTest() {
-        List<Double> list = new ArrayList<>();
+       /* List<Double> list = new ArrayList<>();
         list.add(null);
         list.add(1.0);
         list.add(2.0);
         list.add(3.0);
         list.add(4.0);
         double average = list.stream().filter(Objects::nonNull).mapToDouble(Double::doubleValue).summaryStatistics().getAverage();
-        System.out.println(average);
+        System.out.println(average);*/
+        for (int i = 0; i < 100; i++) {
+
+            System.out.println(new java.util.Random().nextInt(9999));
+        }
     }
 
-
+    @Test
+    public void mapTest() {
+        HashMap<Integer, String> map = new HashMap<>();
+        map.put(1, "1");
+        map.put(2, "2");
+        map.put(3, "3");
+        map.put(4, "4");
+        Set<Integer> longs = map.keySet();
+        HashSet<Integer> integers = new HashSet<>(map.keySet());
+        integers.remove(1);
+        System.out.println(JSONObject.toJSONString(map));
+    }
     @Test
     public void LocalDateTest() {
         LocalDate now = LocalDate.now();
@@ -123,7 +140,7 @@ public class MyTest {
     public void cloneTest() throws CloneNotSupportedException {
         User user = new User(1);
         user.setUser(new User(2));
-        User clone = (User)user.clone();
+        User clone = (User) user.clone();
         System.out.println(JSONObject.toJSONString(user));
         System.out.println(JSONObject.toJSONString(clone));
         clone.getUser().setAge(3);
@@ -131,7 +148,6 @@ public class MyTest {
         System.out.println(JSONObject.toJSONString(clone));
         System.out.println(user.getUser() == clone.getUser());
     }
-
 
 
     @Test
